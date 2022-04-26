@@ -1,0 +1,81 @@
+<div class="nk-sidebar nk-sidebar-fixed is-dark" data-content="sidebarMenu">
+    <div class="nk-sidebar-element nk-sidebar-head">
+        <div class="nk-sidebar-brand">
+            <a class="logo-link nk-sidebar-logo" href="/">
+                <img class="logo-light logo-img" src="/images/procuripie_Logo.svg" srcset="/images/procuripie_Logo.svg" alt="logo">
+                <img class="logo-dark logo-img" src="/images/procuripie_Logo.svg" srcset="/images/procuripie_Logo.svg" alt="logo-dark">
+            </a>
+        </div>
+        <div class="nk-menu-trigger mr-n2">
+            <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
+        </div>
+    </div>
+    <div class="nk-sidebar-element">
+        <div class="nk-sidebar-content">
+            <div class="nk-sidebar-menu" data-simplebar>
+                <ul class="nk-menu">
+                    <li class="d-flex align-items-center flex-column mb-3">
+                        <div class="user-card user-card-s2">
+                            <div class="user-avatar lg bg-primary">
+                                <em class="icon ni ni-user-alt"></em>
+                                <!-- <img class="img-responsive h-100 user-avatar sm" src=""> -->
+                            </div>
+                            <div class="user-info">
+                                <h6 class="text-white"><%= currentUser.firstName%> <%= currentUser.lastName%></h6>
+                                <span class="sub-text"><%= currentUser.role%></span>
+                            </div>
+                        </div>
+                    </li>
+                    <% if(currentUser.role!='NewUser') {%> 
+
+                    <li class="nk-menu-heading">
+                        <h6 class="overline-title text-primary-alt">Overview</h6>
+                    </li>
+                    <li class="nk-menu-item">
+                        <a class="nk-menu-link" href="/Home/Dashboard">
+                            <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
+                            <span class="nk-menu-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nk-menu-heading">
+                        <h6 class="overline-title text-primary-alt">Projects</h6>
+                    </li>
+                    <li class="nk-menu-item">
+                        <a class="nk-menu-link" href="/Projects">
+                            <span class="nk-menu-icon"><em class="icon ni ni-folder-fill"></em></span>
+                            <span class="nk-menu-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nk-menu-heading">
+                        <h6 class="overline-title text-primary-alt">Tickets</h6>
+                    </li>
+                    <li class="nk-menu-item">
+                        <a class="nk-menu-link" href="/Tickets">
+                            <span class="nk-menu-icon"><em class="icon ni ni-ticket-alt-fill"></em></span>
+                            <span class="nk-menu-text">Tickets</span>
+                        </a>
+                    </li>
+                        <li class="nk-menu-item">
+                            <a class="nk-menu-link" href="/Tickets/Create">
+                                <span class="nk-menu-icon"><em class="icon ni ni-plus-round-fill"></em></span>
+                                <span class="nk-menu-text">Create New Ticket</span>
+                            </a>
+                        </li>
+                        <% if(currentUser.role == 'Admin' || currentUser.role=="Admin-Demo"){ %>
+                        <li class="nk-menu-heading">
+                            <h6 class="overline-title text-primary-alt">Manage</h6>
+                        </li>
+                        <li class="nk-menu-item">
+                            <a class="nk-menu-link" href="/UserRoles/ManageUserRoles">
+                                <span class="nk-menu-icon"><em class="icon ni ni-account-setting-fill"></em></span>
+                                <span class="nk-menu-text">User Roles</span>
+                            </a>
+                        </li>
+                        <% } %> 
+<% } %>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+    <base href="../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!-- Page Title  -->
+    <title>procuripie</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="/css/dashlite.css">
+    <link id="skin-default" rel="stylesheet" href="/css/theme.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>  
+</head>
+
+<body class="nk-body bg-lighter npc-general has-sidebar ">
+    <div class="nk-app-root">
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- sidebar @s -->
+            <%-include('../partials/sidebar')%> 
+            <!-- sidebar @e -->
+            <!-- wrap @s -->
+            <div class="nk-wrap ">
+                <!-- main header @s -->
+                <%-include('../partials/header')%>
+                <!-- main header @e -->
+                <!-- content @s -->
+                <div class="nk-content ">
+                    <div class="container-fluid">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                <%- include('../partials/flash')%>
+                                <%- body %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content @e -->
+                
+            </div>
+            <!-- wrap @e -->
+        </div>
+        <!-- main @e -->
+    </div>
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    <script src="/js/bundle.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/addon.js"></script>
+    <script src='/js/charts/chart-setup.js'></script>
+    <% if(info && info.length) {%> 
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    icon: 'info',
+                    title: `<h2 class="swal2-title" id="swal2-title" style="display: flex;"><%= info%><br>BUT...</h2>`,
+                    html: `We haven't saved this change. As a demo user you can preview the functionality of the software but we do not save any of your changes.`,
+                })
+            })
+        </script>
+        <% } %>
+    <% if(success && success.length) {%> 
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: `Welcome, <%= currentUser.firstName %> <%= currentUser.lastName %>!`,
+                        html: `<div class="caption-text">In this demo, you can explore the inside of procuripie.<br><br><strong>Note</strong> - As a demo user, your <strong class="text-danger">changes will not be saved.</strong></div>`,
+                    })
+                })
+            </script>
+    <% } %>
+</body>
+
+</html>

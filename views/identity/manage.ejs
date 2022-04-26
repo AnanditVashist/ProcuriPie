@@ -1,0 +1,157 @@
+<% layout('../views/layouts/boilerplate') %>
+<div class="nk-block">
+    <div class="card card-bordered">
+        <div class="card-aside-wrap">
+            <div class="card-inner card-inner-lg">
+                <div class="nk-block-head nk-block-head-lg">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h4 class="nk-block-title">Personal Information</h4>
+                            <div class="nk-block-des">
+                                <p>Basic info, like your name and email, that you use in procuripie.</p>
+                            </div>
+
+                        </div>
+                        <div class="nk-block-head-content align-self-start d-lg-none">
+                            <a href="#" class="toggle btn btn-icon btn-trigger mt-n1" data-target="userAside"><em class="icon ni ni-menu-alt-r"></em></a>
+                        </div>
+                    </div>
+                    
+
+                    <div class="text-danger validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+</ul></div>
+                </div><!-- .nk-block-head -->
+                <div class="nk-block">
+                    <div class="nk-data data-list">
+                        <div class="data-head">
+                            <h6 class="overline-title">Basics</h6>
+                        </div>
+                        <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                            <div class="data-col">
+                                <span class="data-label">Full Name</span>
+                                <span class="data-value"><%= currentUser.firstName %> <%= currentUser.lastName %></span>
+                            </div>
+                            <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                        </div><!-- data-item -->
+                        <!-- data-item -->
+                        <div class="data-item">
+                            <div class="data-col">
+                                <span class="data-label">Email</span>
+                                <span class="data-value"><%= currentUser.email %></span>
+                            </div>
+                            <div class="data-col data-col-end"><span class="data-more disable"><em class="icon ni ni-lock-alt"></em></span></div>
+                        </div><!-- data-item -->
+                        
+                    </div><!-- data-list -->
+                </div><!-- .nk-block -->
+            </div>
+            <div class="card-aside card-aside-left user-aside toggle-slide toggle-slide-left toggle-break-lg" data-content="userAside" data-toggle-screen="lg" data-toggle-overlay="true">
+                <div class="card-inner-group" data-simplebar>
+                    <div class="card-inner">
+                        <div class="user-card">
+                            <div class="user-avatar bg-primary">
+                                <em class="icon ni ni-user-alt"></em>
+                            </div>
+                            <div class="user-info">
+                                <span class="lead-text"><%= currentUser.firstName %> <%= currentUser.lastName %></span>
+                                <span class="sub-text"><%= currentUser.email %></span>
+                            </div>
+                        </div><!-- .user-card -->
+                    </div><!-- .card-inner -->
+                    <div class="card-inner p-0">
+                        <ul class="link-list-menu">
+                            <li><a class="active" href="/Identity/Manage"><em class="icon ni ni-user-fill-c"></em><span>Personal Infomation</span></a></li>
+                            <li><a href="/Identity/ChangePassword"><em class="icon ni ni-shield-star-fill"></em><span>Password Change</span></a></li>
+                        </ul>
+                    </div><!-- .card-inner -->
+                </div><!-- .card-inner-group -->
+            </div><!-- card-aside -->
+        </div><!-- .card-aside-wrap -->
+    </div><!-- .card -->
+</div><!-- .nk-block -->
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="profile-edit">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+            <div class="modal-body modal-body-lg">
+                <h5 class="title">Update Profile</h5>
+                <ul class="nk-nav nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#personal">Personal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#photo">Photo</a>
+                    </li>
+                </ul><!-- .nav-tabs -->
+
+                <form method="post" id="profile-form" action="/identity/manage" enctype="multipart/form-data">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="personal">
+                            <div class="text-danger validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+</ul></div>
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="Input_FirstName">First Name</label>
+                                        <input type="text" class="form-control form-control-lg" data-val="true" data-val-required="The First Name field is required." id="Input_FirstName" name="Input.FirstName" value="<%= currentUser.firstName %>" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="Input_LastName">Last Name</label>
+                                        <input type="text" class="form-control form-control-lg" data-val="true" data-val-required="The Last Name field is required." id="Input_LastName" name="Input.LastName" value='<%= currentUser.lastName %>' required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="Input_Email">Email</label>
+                                        <input disabled type="text" class="form-control form-control-lg" id="Username" name="Username" value="<%= currentUser.email %>" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                                        <li>
+                                            <button type="submit" class="btn btn-lg btn-primary">Update Profile</button>
+                                        </li>
+                                        <li>
+                                            <a data-dismiss="modal" class="link link-light" href="/Identity/Manage">Cancel</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!-- .tab-pane -->
+                        <div class="tab-pane" id="photo">
+                            <div class="row gy-4">
+                                <div class="col-12">
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="default-06">Upload Profile Picture</label>
+                                        <div class="form-control-wrap">
+                                            <div class="custom-file">
+                                                <input class="custom-file-input" id="customFile" type="file" name="Input.Image">
+                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                                        <li>
+                                            <button type="submit" class="btn btn-lg btn-primary">Update Profile</button>
+                                        </li>
+                                        <li>
+                                            <a data-dismiss="modal" class="link link-light" href="/Identity/Manage">Cancel</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!-- .tab-pane -->
+                    </div><!-- .tab-content -->
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8CNo5fhJUYdOuWGCymlWK6s6UuuOzhIAdrLhW_7VcyA0vCWmngvI6OjdIyW-etiYWEcnemQfj-hhmdOCuICYFO4j4qSKAf-yyPCCeLjbK4zAs4DCtQgt5d6tUm-yWdTFNA6df5MnHLiKNTTy2oZhqF8DrWSwO_-e3z14HK6KfSqppjMQGo__dMdwuVxaTscnYg" /></form>
+            </div><!-- .modal-body -->
+        </div><!-- .modal-content -->
+    </div><!-- .modal-dialog -->
+</div>

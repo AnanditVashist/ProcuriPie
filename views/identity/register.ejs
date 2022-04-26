@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+
+<head>
+    <base href="../../../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <title>procuripie-Register</title>
+
+    <link rel="stylesheet" href="/css/dashlite.css?ver=2.1.0">
+    <link id="skin-default" rel="stylesheet" href="/css/theme.css?ver=2.1.0">
+</head>
+
+<body class="nk-body bg-white npc-general pg-auth">
+    <div class="nk-app-root">
+        <div class="nk-main ">
+            <div class="nk-wrap nk-wrap-nosidebar">
+                <div class="nk-content ">
+                    <div class="nk-split nk-split-page nk-split-md">
+                        
+
+
+<div class="nk-split-content nk-block-area nk-block-area-column nk-auth-container bg-white w-lg-45">
+    <div class="absolute-top-right d-lg-none p-3 p-sm-5">
+        <a href="#" class="toggle btn btn-white btn-icon btn-light" data-target="athPromo"><em class="icon ni ni-info"></em></a>
+    </div>
+    <div class="nk-block nk-block-middle nk-auth-body">
+        <div class="brand-logo pb-5">
+            <a href="/" class="logo-link">
+                <img class="logo-light logo-img logo-img-lg" src="/images/t_logo.svg" srcset="/images/t_logo.svg" alt="logo">
+                <img class="logo-dark logo-img logo-img-lg" src="/images/t_logo.svg" srcset="/images/t_logo.svg" alt="logo-dark">
+            </a>
+        </div>
+        <div class="nk-block-head">
+            <div class="nk-block-head-content">
+                <h5 class="nk-block-title">Register</h5>
+                <div class="nk-block-des">
+                    <p>Create New procuripie Account</p>
+                </div>
+            </div>
+        </div><!-- .nk-block-head -->
+        <form method="post" action="/Identity/Register">
+            <!-- <div class="text-danger validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+</ul></div> -->
+            <div class="row form-group">
+                <div class="col">
+                    <label class="form-label" for="Input_FirstName">First Name</label>
+                    <input required class="form-control form-control-lg" id="FirstName" type="text" data-val="true" data-val-length="The First Name must be between 2 and 50 characters long." data-val-length-max="50" data-val-length-min="2" data-val-required="The First Name field is required." maxlength="50" name="Input[FirstName]" value="" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Input.FirstName" data-valmsg-replace="true"></span>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="Input_LastName">Last Name</label>
+                    <input required class="form-control form-control-lg" id="LastName" type="text" data-val="true" data-val-length="The Last Name must be between 2 and 50 characters long." data-val-length-max="50" data-val-length-min="2" data-val-required="The Last Name field is required." maxlength="50" name="Input[LastName]" value="" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Input.LastName" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Input_Email">Email</label>
+                <input required class="form-control form-control-lg" id="email" type="email" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." name="Input[Email]" value="" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Input.Email" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Input[Password]">Password</label>
+                <div class="form-control-wrap">
+                    <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch" data-target="password">
+                        <em class="passcode-icon icon-show icon ni ni-eye"></em>
+                        <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
+                    </a>
+                    <input required class="form-control form-control-lg" id="password" placeholder="Enter your passcode" type="password" data-val="true" data-val-length="The Password must be at least 6 and at max 100 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." maxlength="100" name="Input[Password]" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Input.Password" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Input_ConfirmPassword">Confirm Password</label>
+                <div class="form-control-wrap">
+                    <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch" data-target="confirm-password">
+                        <em class="passcode-icon icon-show icon ni ni-eye"></em>
+                        <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
+                    </a>
+                    <input required class="form-control form-control-lg" id="confirm-password" placeholder="Enter your passcode" type="password" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" name="Input[ConfirmPassword]" />
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Input.ConfirmPassword" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+            </div>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GG61DbYsKhNnCx8U1WKFB2v_hmYPX7_dkUUHypM_Y94cfPf8CFWnWKDe8Ceb8KGT6IZZUfoOdzKdPJnMJvHG7FXUHf-iKKrgY6NtxZ8HPNv0yvCfa5boqKMvwKHSz8EAxoxZ3iPNGVq0sZhsQOMjJ0" />
+    </form>
+    <!-- form -->
+        <div class="form-note-s2 pt-4">
+            Already have an account? <a href="/Identity/Login"><strong>Sign in instead</strong></a>
+        </div>
+        <div class="text-center pt-4 pb-3">
+            <h6 class="overline-title overline-title-sap"><span>Or Login With A Demo Account</span></h6>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form id="account" method="post" action="/identity/demoLogin">
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="demoEmail" value="admin-demo@gmail.com">Admin</button>
+                    </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GG61DbYsKhNnCx8U1WKFB1-Vs9BljxGRZ_RiJm-6lRWgcnBub37xcdrFVbcSdOU_KjNVLvxhAOXTlwLngEZdDDj0spmOh-Av5uZKBeK3GrtK6F2jM-FFfC-bSp1xMO0GUf39F1KaGz8rc4cNZ0n8qE" /></form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form id="account" method="post" action="/identity/demoLogin">
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="demoEmail" value="manager-demo@gmail.com">Project Manager</button>
+                    </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GG61DbYsKhNnCx8U1WKFB1-Vs9BljxGRZ_RiJm-6lRWgcnBub37xcdrFVbcSdOU_KjNVLvxhAOXTlwLngEZdDDj0spmOh-Av5uZKBeK3GrtK6F2jM-FFfC-bSp1xMO0GUf39F1KaGz8rc4cNZ0n8qE" /></form>
+            </div>
+            <div class="col">
+                <form id="account" method="post" action="/identity/demoLogin">
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="demoEmail" value="developer-demo@gmail.com">Developer</button>
+                    </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GG61DbYsKhNnCx8U1WKFB1-Vs9BljxGRZ_RiJm-6lRWgcnBub37xcdrFVbcSdOU_KjNVLvxhAOXTlwLngEZdDDj0spmOh-Av5uZKBeK3GrtK6F2jM-FFfC-bSp1xMO0GUf39F1KaGz8rc4cNZ0n8qE" /></form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form id="account" method="post" action="/identity/demoLogin">
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="demoEmail" value="submitter-demo@gmail.com">Submitter</button>
+                    </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GG61DbYsKhNnCx8U1WKFB1-Vs9BljxGRZ_RiJm-6lRWgcnBub37xcdrFVbcSdOU_KjNVLvxhAOXTlwLngEZdDDj0spmOh-Av5uZKBeK3GrtK6F2jM-FFfC-bSp1xMO0GUf39F1KaGz8rc4cNZ0n8qE" /></form>
+            </div>
+            <div class="col">
+                <form id="account" method="post" action="/identity/demoLogin">
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="demoEmail" value="NewUser-demo@gmail.com">New User</button>
+                    </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GG61DbYsKhNnCx8U1WKFB1-Vs9BljxGRZ_RiJm-6lRWgcnBub37xcdrFVbcSdOU_KjNVLvxhAOXTlwLngEZdDDj0spmOh-Av5uZKBeK3GrtK6F2jM-FFfC-bSp1xMO0GUf39F1KaGz8rc4cNZ0n8qE" /></form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="nk-split-content nk-split-stretch bg-abstract"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bundle.js?ver=2.1.0"></script>
+    <script src="/js/scripts.js?ver=2.1.0"></script>
+    
+    
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js" crossorigin="anonymous" integrity="sha384-rZfj/ogBloos6wzLGpPkkOr/gpkBNLZ6b6yLy4o+ok+t/SAKlL5mvXLr0OXNi1Hp">
+    </script>
+<script>(window.jQuery && window.jQuery.validator||document.write("\u003Cscript src=\u0022/Identity/lib/jquery-validation/jquery.validate.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha384-rZfj/ogBloos6wzLGpPkkOr/gpkBNLZ6b6yLy4o\u002Bok\u002Bt/SAKlL5mvXLr0OXNi1Hp\u0022\u003E\u003C/script\u003E"));</script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.9/jquery.validate.unobtrusive.min.js" crossorigin="anonymous" integrity="sha384-ifv0TYDWxBHzvAk2Z0n8R434FL1Rlv/Av18DXE43N/1rvHyOG4izKst0f2iSLdds">
+    </script>
+<script>(window.jQuery && window.jQuery.validator && window.jQuery.validator.unobtrusive||document.write("\u003Cscript src=\u0022/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha384-ifv0TYDWxBHzvAk2Z0n8R434FL1Rlv/Av18DXE43N/1rvHyOG4izKst0f2iSLdds\u0022\u003E\u003C/script\u003E"));</script>
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+

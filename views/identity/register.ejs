@@ -40,13 +40,22 @@
             <div class="nk-block-head-content">
                 <h5 class="nk-block-title">Register</h5>
                 <div class="nk-block-des">
-                    <p>Create New procuripie Account</p>
+                    <p>Create New ProcuriPie Account</p>
                 </div>
             </div>
         </div><!-- .nk-block-head -->
         <form method="post" action="/Identity/Register">
             <!-- <div class="text-danger validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
 </ul></div> -->
+        <div class="form-group">
+            <label class="form-label" for="Input_CompanyName">Company Name</label>
+            <input required class="form-control form-control-lg" id="CompanyName" type="text"
+                data-val="true"
+                data-val-required="The Company name field is required." name="Input[CompanyName]" value="" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Input.CompanyName"
+                data-valmsg-replace="true"></span>
+        </div>
+        <h6>Admin Details</h2>
             <div class="row form-group">
                 <div class="col">
                     <label class="form-label" for="Input_FirstName">First Name</label>
@@ -95,7 +104,7 @@
         <div class="form-note-s2 pt-4">
             Already have an account? <a href="/Identity/Login"><strong>Sign in instead</strong></a>
         </div>
-        <div class="text-center pt-4 pb-3">
+        <!--<div class="text-center pt-4 pb-3">
             <h6 class="overline-title overline-title-sap"><span>Or Login With A Demo Account</span></h6>
         </div>
         <div class="row">
@@ -138,7 +147,7 @@
                     </div>
                 <input name="__RequestVerificationToken" type="hidden" value="CfDJ8GG61DbYsKhNnCx8U1WKFB1-Vs9BljxGRZ_RiJm-6lRWgcnBub37xcdrFVbcSdOU_KjNVLvxhAOXTlwLngEZdDDj0spmOh-Av5uZKBeK3GrtK6F2jM-FFfC-bSp1xMO0GUf39F1KaGz8rc4cNZ0n8qE" /></form>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

@@ -23,7 +23,7 @@ const mongoSanitize=require('express-mongo-sanitize')
 const helmet=require('helmet')
 const Swal = require('sweetalert2')
 const MongoDBStore=require('connect-mongo')
-const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/procuripie';
+const dbUrl='mongodb://localhost:27017/procuripie';
 
 mongoose.connect(dbUrl,{
     useNewUrlParser: true,	
@@ -101,10 +101,10 @@ app.use((req, res, next) => {
 
 // const projectsController=require('./routes/projects')
 // const ticketsController=require('./routes/tickets')
-// const identityController=require('./routes/identity')
+const identityController=require('./routes/identity')
 // const homeController=require('./routes/home')
 // const chartsController=require('./routes/charts')
-const userRolesController=require('./routes/userRoles')
+// const userRolesController=require('./routes/userRoles')
 
 app.use((req,res,next)=>{
     res.locals.success=req.flash('success'),
@@ -117,10 +117,10 @@ app.use((req,res,next)=>{
 
 // app.use('/projects',isLoggedIn, projectsController)
 // app.use('/tickets',isLoggedIn ,ticketsController)
-// app.use('/identity', identityController)
+app.use('/identity', identityController)
 // app.use('/home',isLoggedIn ,homeController)
 // app.use('/charts',isLoggedIn ,chartsController)
-app.use('/userRoles',isLoggedIn ,userRolesController)
+// app.use('/userRoles',isLoggedIn ,userRolesController)
 
 app.get('/',(req,res)=>{
     res.render('landingPage')

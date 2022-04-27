@@ -1,4 +1,5 @@
 const User=require('../models/user')
+const Company=require('../models/company')
 const env=require("dotenv").config();
 
 
@@ -7,16 +8,23 @@ module.exports.renderRegisterForm= (req,res)=>{
 }
 
     module.exports.postRegisterForm=  async(req,res)=>{
+    const company=new Company({name: req.body.Input.CompanyName})
+    company.save()
+    
+    const empCompany=req.body.Input.CompanyName;
     const firstName=req.body.Input.FirstName;
     const lastName=req.body.Input.LastName;
     const email=req.body.Input.Email;
     const username=req.body.Input.Email;
     const password=req.body.Input.Password;
-    const user=new User({email,firstName,lastName,username})
+    const user=new User({email,firstName,lastName,username,company})
     const registerUser=await User.register(user,password)
+
+    company.employees.push(registerUser)
+    company.save()
     req.login(user,err=>{
         if(err)console.log(err);
-        res.redirect('/home/welcome')
+        res.send('ok')
     })
 }
 

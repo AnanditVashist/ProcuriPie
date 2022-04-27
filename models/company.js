@@ -8,7 +8,6 @@ const companySchema=new mongoose.Schema({
     employees: [{
         type: mongoose.Schema.ObjectId,
         ref:'User'
-        required: true
     }],
     }
 )
